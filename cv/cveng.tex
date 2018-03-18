@@ -1,0 +1,101 @@
+%%
+%% Curriculum Vitae in TeX
+%%
+%% Unfinished draft of a simple layout for a curriculum vitae.
+%% It has been developed to be compiled with LuaLaTeX
+%% (tested on version 1.0.4).
+%% !TEX program = lualatex
+%%
+%% Copyright (C) 2018 Andreas Hernández Hauser
+%%
+
+\documentclass[12pt,a4paper,oneside,final]{scrartcl}
+
+\usepackage{cveng}
+
+\begin{document}
+
+\cvtitle{Andreas~G.~Hernández~Hauser}{Street~000}{District}{00000~City}{email@email.com}{0000~0000000}
+
+%--------------------------------------
+
+\addsec{PROFILE}
+
+I have recently completed my studies for an MSc in Computer Science (Software Engineering) at Aberystwyth University. I have a deep passion for software development, have an eye for small details and take pride in my work. I have also grown a special interest in Machine Learning, especially with neural networks and their capabilities. I consider myself a patient person, easy to approach and work as part of a team, as well as individually.
+
+%--------------------------------------
+
+\addsec{SKILLS}
+
+\begin{description}[noitemsep]
+    \item [Software development] Competent in programming languages including C/C++, Java and Python, with basic knowledge in Ruby, Haskell and JavaScript.
+    \item [Operating systems] Worked in different environments, mainly in GNU/Linux, but also including Microsoft Windows and macOS.
+    \item [Languages] Speak Spanish and German as a mother language, proficient in English and have basic knowledge of French.
+    \item [Social skills] Open-minded person and have experience working with diverse teams.
+\end{description}
+
+%--------------------------------------
+
+\addsec{EDUCATION}
+
+\ExperienceEntry{MSc in Software Engineering}{Sep 2016--Oct 2017}{Aberystwyth University, Wales, UK}
+{
+    \textit{Relevant modules taken include:}\\[0.5em]
+    \textbf{The Objectoriented Programming Paradigm:} Advanced understanding of Object-oriented analysis, design and implementation techniques. Evaluating problem spaces in order to appropriately apply object-oriented design patterns, as well as evaluating their effectiveness.\\[0.5em]
+    \textbf{Fundamentals of Intelligent Systems:} Introduction into the concepts of Artificial Intelligence and Machine Learning. Being able to reflect on project needs and practically applying the AI and ML principles.\\[0.5em]
+    \textbf{Machine Learning for Intelligent Systems:} Introduction into a number of Machine Learning methods and tools. Analysing data sets with the appropriate tools, as well as designing, running and documenting experiments using Machine Learning.\\[0.5em]
+    \textit{Title of the MSc dissertation:}\\[0.5em]
+    \textbf{Development of computational tools for image-based phenotyping of Arabidopsis}\\
+    Use of traditional image segmentation techniques for the detection of different parts of the Arabidopsis plant and comparing the results with deep learning techniques, using different ConvNets designed for object detection.
+}
+
+\sepspace{}
+\pagebreak
+\ExperienceEntry{BSc in Computer Science \& A.I.}{Sep 2013--Jun 2016}{Aberystwyth University, Wales, UK}
+{
+    \textit{Relevant modules taken include:}\\[0.5em]
+    \textbf{Concepts in Programming} and \textbf{Software Development:} introduction into programming with different concepts. Using Java for object-oriented programming and Haskell for funktional programming.
+    \\[0.5em]
+    \textbf{Program Design, Data Structures and Algorithms:} Implementation of data structures with Java, including queues, stacks and binary heaps, as well as using Dijkstra's algorithm on graphs.\\[0.5em]
+    \textbf{C and UNIX Programming:} Introduction into programming with C, creating data structures, using pointers and referencing and dereferencing objects in the heap memory.\\[0.5em]
+    \textbf{C, C++ and Java Programming Paradigms:} Differences between object-oriented and procedural programming. Advanced introduction into programming with C++ and templates. Object-oriented programming with C (using structs and function pointers).\\[0.5em]
+    \textit{Title of the BSc dissertation:}\\[0.5em]
+    \textbf{Multiclass image classification with convolutional neural networks}\\
+    Classification of the different classes of the CIFAR-10 data set using ConvNets of different sizes and adjusting the parameters accordingly.
+}
+
+\sepspace{}
+
+\ExperienceEntry{A-levels}{Sep 2000--Jun 2007}{International British Yeoward School, Puerto de la Cruz, Spain}
+{Language of instruction in English}
+
+\sepspace{}
+
+\ExperienceEntry{Primary school}{Sep 1995--Jun 2000}{Deutsche Schule, Puerto de la Cruz, Spain}
+{Language of instruction in German and Spanish}
+
+%--------------------------------------
+
+\addsec{OTHER}
+
+\ExperienceEntry{Military service}{Oct 2007--Jun 2008}{German Federal Armed Forces}
+{
+    Training as helper in the medical service and basic courses for logistics units
+}
+
+\sepspace{}
+
+\ExperienceEntry{Bookkeeping (part time job)}{2004--2017}{Apartment property communities, Puerto de la Cruz, Spain}
+{
+    Bookkeeping for a number of different property communities using special accounting software, as well as spreadsheets (depending on the size of the community).
+}
+
+%--------------------------------------
+
+\addsec{INTERESTS AND ACTIVITIES}
+
+Open-Source, Programming, GNU/Linux\\
+Machine Learning, Artificial Neural Networks\\
+Classical music, Typography
+
+\end{document}

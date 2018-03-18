@@ -1,0 +1,92 @@
+
+\ProvidesPackage{cvdeu}
+
+%------------------------------------------------------------------------------
+% MAIN PACKAGES
+
+% Slightly tweak font spacing for aesthetics
+\usepackage[tracking=true]{microtype}
+
+% Localisations
+\usepackage[german]{babel}
+\usepackage{csquotes}
+
+% Include pictures
+\usepackage{graphicx}
+% \usepackage{float}
+\usepackage{wrapfig}
+\usepackage{tikz}
+
+% Currvita package for german-styled CVs
+\usepackage{currvita}
+
+% Customised header and footer
+% \usepackage{scrlayer-scrpage}
+
+% Necessary for using icons/symbols
+% \usepackage{marvosym}
+
+% Text in different colours
+\usepackage{xcolor}
+
+% Clickable hyperlinks and references
+\usepackage{hyperref}
+
+% Better lists
+\usepackage{enumitem}
+
+% \usepackage{tabularx,colortbl}  % Advanced table configurations
+
+% Margin formatting of the A4 page
+\usepackage[margin=3.2cm]{geometry}
+
+%------------------------------------------------------------------------------
+% FONT CONFIGURATION
+
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault,lf,scaled=.85]{FiraSans}
+% \usepackage{paratype}
+% \renewcommand*\familydefault{\sfdefault}
+% \usepackage[familydefault]{Rosario}
+% \usepackage[T1]{fontenc}
+
+%------------------------------------------------------------------------------
+% DOCUMENT CONFIGURATION
+
+% Custom colour
+\definecolor{MillennialBlue}{RGB}{2,93,140}
+
+% Hyperlink config
+\hypersetup{%
+    pdfauthor  = {Andreas Hernandez Hauser},
+    pdftitle   = {Bewerbung},
+    colorlinks = true,
+    breaklinks = true,
+    linkcolor  = MillennialBlue,
+    citecolor  = black,
+    filecolor  = black,
+    urlcolor   = MillennialBlue
+}
+
+% \cfoot{}                        % Empty central position of footer
+% \pagestyle{scrheadings}         % Print the headers and footers on all pages
+\frenchspacing                  % Better looking spacing after periods
+
+%------------------------------------------------------------------------------
+% CURRVITA CONFIGURATION
+
+% Larger CV title
+\renewcommand*{\cvheadingfont}{\LARGE\bfseries}
+
+% Custom CV list headings with horizontal line in front
+\renewcommand*{\cvlistheadingfont}{\rule[1mm]{9.5em}{1.5pt}\hskip 1.5em\large\bfseries}
+
+% Right align item labels
+\renewcommand*{\cvlabelfont}{\hskip 0pt plus 1filll}
+
+\AtBeginDocument{%
+    \setlength{\cvlabelwidth}{9.5em}%
+    \setlength{\cvlabelsep}{1.5em}%
+}
+
+\newcommand{\sepspace}{\vspace*{1.5em}}

@@ -1,0 +1,100 @@
+
+\ProvidesPackage{cveng}
+
+%------------------------------------------------------------------------------
+% MAIN PACKAGES
+
+% Slightly tweak font spacing for aesthetics
+\usepackage[tracking=true]{microtype}
+
+% Localisations
+\usepackage[UKenglish]{babel}
+\usepackage{csquotes}
+
+% Customised header and footer
+\usepackage{scrlayer-scrpage}
+
+% Necessary for using icons/symbols
+\usepackage{marvosym}
+
+% Text in different colours
+\usepackage{xcolor}
+
+% Clickable hyperlinks and references
+\usepackage{hyperref}
+
+% Better lists
+\usepackage{enumitem}
+
+% \usepackage{tabularx,colortbl}  % Advanced table configurations
+
+% Margin formatting of the A4 page
+\usepackage[margin=3.0cm]{geometry}
+
+%------------------------------------------------------------------------------
+% FONT CONFIGURATION
+
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault,lf,scaled=.85]{FiraSans}
+
+%------------------------------------------------------------------------------
+% DOCUMENT CONFIGURATION
+
+% Custom colour
+\definecolor{MillennialBlue}{RGB}{2,93,140}
+
+% Hyperlink config
+\hypersetup{%
+    colorlinks = true,
+    breaklinks = true,
+    linkcolor  = MillennialBlue,
+    citecolor  = black,
+    filecolor  = black,
+    urlcolor   = MillennialBlue
+}
+
+% Custom \section command
+\RedeclareSectionCommand[afterskip=.5em,font=\normalfont\bfseries]{section}
+
+% Horizontal line under each section title
+\renewcommand{\sectionlinesformat}[4]{%
+    \ifstr{#1}{section}{%
+        \parbox[t]{\linewidth}{%
+            \raggedsection\@hangfrom{\hskip #2#3}{#4}\par
+            \kern-1\ht\strutbox\rule{\linewidth}{.5pt}
+        }%
+    }{%
+    \@hangfrom{\hskip #2#3}{#4}}
+}
+
+\cfoot{}                        % Empty central position of footer
+\pagestyle{scrheadings}         % Print the headers and footers on all pages
+\setlength{\parindent}{0pt}     % Remove the default paragraph indentation
+\frenchspacing                  % Better looking spacing after periods
+
+%------------------------------------------------------------------------------
+% MACROS
+
+\newcommand{\sepspace}{\vspace*{2em}}
+
+\newcommand{\cvtitle}[6]{%
+    \begin{center}
+        \huge #1\par
+        \itshape \normalsize #2 {\large\textperiodcentered} #3 {\large\textperiodcentered} #4\par
+        {\Letter} #5 \ {\Telefon} #6
+    \end{center}
+    \sepspace{}
+}
+
+\newcommand{\ExperienceEntry}[4]{%
+    \textbf{#1} \hfill          % Name
+    \textbf{#2} \par            % Date
+    \textit{#3} \par            % Institution
+    \vspace{0.5em}
+    \begingroup
+    \leftskip2em
+    \rightskip\leftskip
+    \small #4                   % Description
+    \normalsize \par
+    \endgroup
+}

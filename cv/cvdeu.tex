@@ -1,0 +1,115 @@
+%%
+%% Lebenslauf in TeX
+%%
+%% Layout for a German style CV (Lebenslauf) using the
+%% currvita package. It has been developed to be compiled
+%% with LuaLaTeX (tested on version 1.0.4).
+%% !TEX program = lualatex
+%%
+%% Copyright (C) 2018 Andreas Hernández Hauser
+%%
+
+\documentclass[12pt,a4paper,oneside,final]{scrartcl}
+
+\usepackage{cvdeu}
+
+\begin{document}
+
+\noindent\textbf{\Large{Lebenslauf}}
+
+\vspace{1em}
+
+\noindent{\LARGE{Andreas G. Hernández Hauser}}
+
+\vspace{2em}
+
+\begin{cv}
+
+    \begin{cvlist}{Persönliche Daten}
+        \setlength\itemsep{-0.5em}
+        \item[Name] Andreas G. Hernández Hauser
+        \item[Anschrift] Straße~000\\
+            00000~Stadt
+            \setlength\itemsep{0em}
+        \item[Mobil] 0000~0000000
+        \setlength\itemsep{-0.5em}
+        \item[E-Mail] \href{mailto:email@email.com}{email@email.com}
+        \setlength\itemsep{0em}
+        \item[Geburtsdatum/-ort] 00. Januar 1900 in~Stadt
+        \setlength\itemsep{-0.5em}
+        \item[Staatsangehörigkeit] deutsch
+        \item[Familienstand] ledig
+
+        \sepspace
+    \end{cvlist}
+
+    \begin{cvlist}{Ausbildung}
+        \item[08/1995--05/2000] Deutsche Schule in Puerto de la Cruz, Teneriffa, Spanien\\
+            \textit{Unterricht~auf~Deutsch~und~Spanisch}
+        \item[08/2000--05/2007] International British Yeoward School in Puerto de la Cruz\\
+            \textit{Unterricht~auf~Englisch}\\
+            Abschluss: A-level (Abitur)
+        \item[08/2009--04/2013] \textbf{Grado en Ingeniería Informática}\\
+            Universidad de La Laguna, Teneriffa, Spanien
+        \item[08/2013--05/2016] \textbf{Computer Science \& A.I.}\\
+            Aberystwyth University, Wales, UK\\
+            Abschluss: Bachelor of Science
+
+            \textit{Relevante Module:}\\[0.5em]
+            \textbf{Concepts in Programming} und \textbf{Software Development:} Einführung in die Programmierung mit unterschiedlichen Konzepten. Objektorientierung mit Java und funktionale Programmierung mit Haskell.\\[0.5em]
+            \textbf{Program Design, Data Structures and Algorithms:} Codierung von Datenstrukturen mit Java (Warteschlange, Stapelspeicher, Binärer Heap) und Dijkstra-Algorithmus.\\[0.5em]
+            \textbf{C and UNIX Programming:} Einführung in die C Programmierung, Zeiger und Datenstrukturen.\\[0.5em]
+            \textbf{C, C++ and Java Programming Paradigms:} Unterschiede zwischen objektorientierter und prozeduraler Programmierung. Detaillierte Einführung in die C++ Programmierung und Templates. Objektorientierte Programmierung mit C (Funktionszeiger in Strukturen).
+
+            \textit{Titel der Bachelorarbeit:}\\[0.5em]
+            \textbf{Multiclass image classification with convolutional neural networks}\\
+            Klassifizierung der Klassen des CIFAR-10 Datensatzes mit ConvNets unterschiedlicher größen und Parametern.
+
+        \item[08/2016--09/2017] \textbf{Software Engineering (Computer Science)}\\
+            Aberystwyth University, Wales, UK\\
+            Abschluss: Master of Science
+
+            \textit{Relevante Module:}\\[0.5em]
+            \textbf{The Objectoriented Programming Paradigm:} Einschätzung einer Auswahl von Problemdomänen für eine angemessene Anwendung der Objectorientierung. Anwendung von unterschiedlichen Entwurfsmustern (design patterns) und Auswertung dessen effektivität.\\[0.5em]
+            \textbf{Fundamentals of Intelligent Systems:} Einführung in unterschiedlichen Konzepten der Künstlichen Intelligenz und deren Implementierung in Python und Java.\\[0.5em]
+            \textbf{Machine Learning for Intelligent Systems:} Einführung in unterschiedlichen Konzepten für Machine Learning. Analyse von Datensätzen mit Python.
+
+            \textit{Titel der Masterarbeit:}\\[0.5em]
+            \textbf{Development of computational tools for image-based phenotyping of Arabidopsis}\\
+            Verwendung traditioneller Bildsegmentierungstechniken zum erkennen verschiedener Teile der Arabidopsis-Pflanze. Einsatz von Deep-Learning-Techniken mit verschiedenen ConvNets zur Objekterkennung.
+
+        \sepspace
+    \end{cvlist}
+
+    \begin{cvlist}{Sonstiges}
+        \item[10/2007--06/2008] \textbf{Wehrdienst bei der Bundeswehr in Deutschland (Luftwaffe)}\\
+            u. a. Ausbildung als Helfer im Sanitätsdienst und Lehrgang für Logistikeinheiten
+        \item[2004--2017] \textbf{Buchführung für Wohnungseigentümergemeinschaften}\\
+            (Nebenberuflich) Buchführung und Bilanzierung sowohl mittels spezieller Computerprogramme als auch mittels Tabellenkalkulation
+
+        \sepspace
+    \end{cvlist}
+
+    \begin{cvlist}{Kenntnisse}
+        \item[Betriebssysteme] Linux, Windows, macOS
+        \item[Sprachen] Java, C/C++, Python, Shell-Skripte, HTML, JavaScript
+        \item[Anwendungen] Eclipse, IntelliJ IDEA, Visual Studio, Android Studio, LaTeX, Vim
+        \item[Sprachkenntnisse] Deutsch und Spanisch \textit{(Muttersprache)}\\
+            Englisch \textit{(Englische Schule in Puerto de la Cruz und Studium im Vereinigten Königreich)}\\
+            Französisch \textit{(Grundkenntnisse)}
+
+        \sepspace
+    \end{cvlist}
+
+    \begin{cvlist}{Interessen}
+        \item Open-Source, Programmierung, GNU/Linux,\\
+            Machine Learning, Künstliche neuronale Netze,\\
+            Klassische Musik, Karate, Typografie
+    \end{cvlist}
+
+    \cvplace{Düsseldorf}
+    \date{15.~März~2018}
+
+\end{cv}
+
+\end{document}
