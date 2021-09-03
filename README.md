@@ -1,2 +1,4 @@
-# latex-templates
+# Latex Templates
+
 Templates for some LaTeX documents
+
