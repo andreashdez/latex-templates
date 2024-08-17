@@ -1,0 +1,49 @@
+
+\ProvidesPackage{putzplan}
+
+% Slightly tweak font spacing for aesthetics
+\usepackage[tracking=true]{microtype}
+
+% Localisations
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\usepackage{translator}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usetikzlibrary{calendar}
+
+% Customised header and footer
+\usepackage{scrlayer-scrpage}
+\cfoot{}
+
+% Margin formatting of the A4 page
+\usepackage[margin={2.8cm,1.2cm,2.8cm,1.2cm}]{geometry}
+%\usepackage[margin={2.8cm,2.8cm,2.8cm,1.2cm}]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro}
+% \usepackage[default,regular,black]{sourceserifpro}
+
+\def\tennant#1#2{
+	\node [anchor=base west, transform canvas={xshift=0.8pc,yshift=0.0pc}] at (cal-#1.base east) {#2};
+	\draw [thick, transform canvas={xshift=0.8pc,yshift=-0.5pc}] (cal-#1.base east)--+(16.5pc,0);
+}
+
+\def\calendaryear#1#2#3{
+	\calendar [
+		dates=#1-#2-01 to #1-#3-last,
+		name=cal,
+		week list,
+		day yshift={2.0pc},
+		month yshift={1.3pc},
+		month label left vertical,
+		month text=\textcolor{lightgray}{\%mt},
+		black
+	]
+		if (weekend) [lightgray];
+}
+
