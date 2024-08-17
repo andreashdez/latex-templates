@@ -1,41 +1,48 @@
-
 \ProvidesPackage{cveng}
 
 %------------------------------------------------------------------------------
 % MAIN PACKAGES
 
 % Slightly tweak font spacing for aesthetics
-\usepackage[tracking=true]{microtype}
+\RequirePackage[tracking=true]{microtype}
 
 % Localisations
-\usepackage[UKenglish]{babel}
-\usepackage{csquotes}
+\RequirePackage[UKenglish]{babel}
+\RequirePackage{csquotes}
 
 % Customised header and footer
-\usepackage{scrlayer-scrpage}
+\RequirePackage{scrlayer-scrpage}
 
 % Necessary for using icons/symbols
-\usepackage{marvosym}
+\RequirePackage{marvosym}
 
 % Text in different colours
-\usepackage{xcolor}
+\RequirePackage{xcolor}
 
 % Clickable hyperlinks and references
-\usepackage{hyperref}
+\RequirePackage{hyperref}
 
 % Better lists
-\usepackage{enumitem}
+\RequirePackage{enumitem}
 
-% \usepackage{tabularx,colortbl}  % Advanced table configurations
+% Advanced table configurations
+% \usepackage{tabularx,colortbl}
 
 % Margin formatting of the A4 page
-\usepackage[margin=3.0cm]{geometry}
+\RequirePackage[margin=3.0cm]{geometry}
 
 %------------------------------------------------------------------------------
 % FONT CONFIGURATION
 
-\usepackage[T1]{fontenc}
-\usepackage[sfdefault,lf,scaled=.85]{FiraSans}
+\RequirePackage[T1]{fontenc}
+% \usepackage[sfdefault,lf,scaled=.85]{FiraSans}
+
+% \usepackage{CrimsonPro}
+% \let\oldnormalfont\normalfont
+% \def\normalfont{\oldnormalfont\mdseries}
+
+\RequirePackage[default]{sourcesanspro}
+% \usepackage[default,regular,black]{sourceserifpro}
 
 %------------------------------------------------------------------------------
 % DOCUMENT CONFIGURATION
@@ -54,23 +61,28 @@
 }
 
 % Custom \section command
-\RedeclareSectionCommand[afterskip=.5em,font=\normalfont\bfseries]{section}
+\RedeclareSectionCommand[afterskip=0.5em,font=\normalfont\bfseries]{section}
 
 % Horizontal line under each section title
 \renewcommand{\sectionlinesformat}[4]{%
-    \ifstr{#1}{section}{%
+    \Ifstr{#1}{section}{%
         \parbox[t]{\linewidth}{%
             \raggedsection\@hangfrom{\hskip #2#3}{#4}\par
-            \kern-1\ht\strutbox\rule{\linewidth}{.5pt}
+            \kern-1\ht\strutbox\rule{\linewidth}{0.5pt}
         }%
     }{%
-    \@hangfrom{\hskip #2#3}{#4}}
+        \@hangfrom{\hskip #2#3}{#4}
+    }
 }
 
-\cfoot{}                        % Empty central position of footer
-\pagestyle{scrheadings}         % Print the headers and footers on all pages
-\setlength{\parindent}{0pt}     % Remove the default paragraph indentation
-\frenchspacing                  % Better looking spacing after periods
+% Empty central position of footer
+\cfoot{}
+% Print the headers and footers on all pages
+\pagestyle{scrheadings}
+% Remove the default paragraph indentation
+\setlength{\parindent}{0pt}
+% Better looking spacing after periods
+\frenchspacing
 
 %------------------------------------------------------------------------------
 % MACROS
@@ -79,7 +91,7 @@
 
 \newcommand{\cvtitle}[6]{%
     \begin{center}
-        \huge #1\par
+        \Huge #1\par
         \itshape \normalsize #2 {\large\textperiodcentered} #3 {\large\textperiodcentered} #4\par
         {\Letter} #5 \ {\Telefon} #6
     \end{center}
@@ -87,14 +99,14 @@
 }
 
 \newcommand{\ExperienceEntry}[4]{%
-    \textbf{#1} \hfill          % Name
-    \textbf{#2} \par            % Date
-    \textit{#3} \par            % Institution
+    \textbf{#1} \hfill % Name
+    \textbf{#2} \par % Date
+    \textit{#3} \par % Institution
     \vspace{0.5em}
     \begingroup
     \leftskip2em
     \rightskip\leftskip
-    \small #4                   % Description
+    \small #4 % Description
     \normalsize \par
     \endgroup
 }
